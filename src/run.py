@@ -2,14 +2,15 @@
 from slackbot.bot import Bot, respond_to, listen_to
 import re
 import json
+from coinone import *
 
 
 @respond_to('.*')
 def help(message):
-    message.reply("못알아먹겠소")
+    message.reply("What?")
+    # message.reply("못알아먹겠소")
 
 
-@listen_to('github')
 @respond_to('github', re.IGNORECASE)
 def github(message):
     attachments = [{
@@ -21,6 +22,25 @@ def github(message):
     }]
     message.reply_webapi('혹시 이거?', json.dumps(attachments))
 
+@respond_to('btc', re.IGNORECASE)
+def xrp(message):
+    attachments = SlackResponder.currency("btc")
+    message.reply_webapi('', json.dumps(attachments))
+
+@respond_to('eth', re.IGNORECASE)
+def xrp(message):
+    attachments = SlackResponder.currency("eth")
+    message.reply_webapi('', json.dumps(attachments))
+
+@respond_to('etc', re.IGNORECASE)
+def xrp(message):
+    attachments = SlackResponder.currency("etc")
+    message.reply_webapi('', json.dumps(attachments))
+
+@respond_to('xrp', re.IGNORECASE)
+def xrp(message):
+    attachments = SlackResponder.currency("xrp")
+    message.reply_webapi('', json.dumps(attachments))
 
 def main():
     bot = Bot()
