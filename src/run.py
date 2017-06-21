@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from slackbot.bot import Bot, respond_to, listen_to
+from slackbot.bot import Bot, respond_to
 import re
 import json
 from coinone import *
@@ -7,7 +7,8 @@ from coinone import *
 
 @respond_to('.*')
 def help(message):
-    message.reply("What?")
+    message.reply(("avaliable command list:\n"
+                  "*btc*, *eth*, *etc*, *xrp*"))
     # message.reply("못알아먹겠소")
 
 
