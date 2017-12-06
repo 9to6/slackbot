@@ -8,7 +8,7 @@ from coinone import *
 @respond_to('.*')
 def help(message):
     message.reply(("avaliable command list:\n"
-                  "*btc*, *eth*, *etc*, *xrp*"))
+                  "*btc*, *bch*, *eth*, *etc*, *xrp*, *qtum*, *ltc*, *iota*"))
     # message.reply("못알아먹겠소")
 
 
@@ -24,23 +24,43 @@ def github(message):
     message.reply_webapi('혹시 이거?', json.dumps(attachments))
 
 @respond_to('btc', re.IGNORECASE)
-def xrp(message):
+def btc(message):
     attachments = SlackResponder.currency("btc")
     message.reply_webapi('', json.dumps(attachments))
 
+@respond_to('bch', re.IGNORECASE)
+def btc(message):
+    attachments = SlackResponder.currency("bch")
+    message.reply_webapi('', json.dumps(attachments))
+
 @respond_to('eth', re.IGNORECASE)
-def xrp(message):
+def eth(message):
     attachments = SlackResponder.currency("eth")
     message.reply_webapi('', json.dumps(attachments))
 
 @respond_to('etc', re.IGNORECASE)
-def xrp(message):
+def etc(message):
     attachments = SlackResponder.currency("etc")
     message.reply_webapi('', json.dumps(attachments))
 
 @respond_to('xrp', re.IGNORECASE)
 def xrp(message):
     attachments = SlackResponder.currency("xrp")
+    message.reply_webapi('', json.dumps(attachments))
+
+@respond_to('qtum', re.IGNORECASE)
+def qtum(message):
+    attachments = SlackResponder.currency("qtum")
+    message.reply_webapi('', json.dumps(attachments))
+
+@respond_to('ltc', re.IGNORECASE)
+def ltc(message):
+    attachments = SlackResponder.currency("ltc")
+    message.reply_webapi('', json.dumps(attachments))
+
+@respond_to('iota', re.IGNORECASE)
+def iota(message):
+    attachments = SlackResponder.currency("iota")
     message.reply_webapi('', json.dumps(attachments))
 
 def main():
